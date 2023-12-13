@@ -1,0 +1,38 @@
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <h1>Cart</h1>
+            {%- if cart.empty? -%}
+                <p>Cart is Empty!</p>
+                {%- else -%}
+                {%- form 'cart', cart -%}
+                    {% for item in cart.items %}
+                        <div>
+                            <img src="{{ item.image | image_url: width: 100 }}" alt="{{ item.image.alt }}" width="{{ item.image.width }}" height="{{ item.image.height }}" loading="lazy">
+                            <h3>{{ item.title }}</h3>
+                            <p>{{ item.price | money }}</p>
+                        </div>
+                    {% endfor %}
+                    <button type="submit" name="checkout" class="btn btn-primary ">Checkout</button>
+                {%- endform -%}
+            {%- endif -%}
+            
+            
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+  "name": "Cart",
+  "settings": [
+
+  ]
+}
+{% endschema %}
+  
+  {% stylesheet %}
+  {% endstylesheet %}
+  
+  {% javascript %}
+  {% endjavascript %}

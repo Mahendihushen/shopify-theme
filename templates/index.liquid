@@ -7,8 +7,8 @@
                     <div class="card shadow border-0 text-start h-100">
                         <a href="{{- product.url -}}"><img src="{{ product.featured_image | image_url: width: 500 }}" class="img-fluid" alt="{{- product.featured_image.alt -}}" width="" height="" loading="lazy"> </a>
                         <div class="card-body">
-                            <h4 class="card-title">{{- product.title | upcase -}}</h4>
-                            <div>{{- product.content -}}</div>
+                            <h4 class="card-title">{{- product.title -}}</h4>
+                            {% comment %} <div>{{- product.content -}}</div> {% endcomment %}
                             <span class="fw-bold">{{- product.price | money -}}</span>
                         </div>
                         <div class="card-footer bg-white p-3">
