@@ -3,12 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ shop.name }}</title>
-</head>
-<header>
+    <title>Custom Theme Demo | {{ shop.name }}</title>
+    {{ 'bootstrap.min.css' | asset_url | stylesheet_tag }}
+    {{ 'global.css' | asset_url | stylesheet_tag }}
     {{ content_for_header }}
-</header>
+</head>
+
 <body>
-    {{ content_for_layout }}
+    {% section 'header' %}
+    <main>
+        {{ content_for_layout }}
+    </main>
+    <footer>
+        
+    </footer>
 </body>
 </html>
