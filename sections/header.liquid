@@ -3,14 +3,14 @@
         <div class="d-flex align-items-center justify-content-between">
             <h1 class="m-0 d-none">{{ shop.name }}</h1>
             <div class="logo">
-                <a href="http://" class="text-decoration-none fw-bold ">{{ shop.name }}</a>
+                <a href="/" class="text-decoration-none fw-bold ">{{ shop.name }}</a>
             </div>
             <nav>
                 <ul class="list-unstyled d-flex gap-4 m-0">
                     {% for link in linklists.main-menu-1.links %}
-                        <li>
-                            <a  class="text-decoration-none text-secondary fw-semibold" href="{{ link.url }}">{{ link.title }}</a>
-                        </li>
+                    <li>
+                        <a class="text-decoration-none {% if link.active -%} {% else  %}text-secondary{% endif %} fw-semibold" href="{{ link.url }}">{{ link.title }}</a>
+                    </li>
                     {% endfor %}
                 </ul>
             </nav>

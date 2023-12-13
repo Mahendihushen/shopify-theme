@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Custom Theme Demo | {{ shop.name }}</title>
+    {{ content_for_header }}
     {{ 'bootstrap.min.css' | asset_url | stylesheet_tag }}
     {{ 'global.css' | asset_url | stylesheet_tag }}
-    {{ content_for_header }}
 </head>
 
 <body>
-    {% section 'header' %}
+    {%- section 'header' -%}
     <main>
         {{ content_for_layout }}
     </main>
