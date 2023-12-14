@@ -6,6 +6,54 @@
     </div>
   </div>
 </div>
+<div>
+  <div class="container">
+    {% form 'contact' %}
+      {{ form.errors | default_errors }}
+      <div class="row">
+        <div class="col-md-6">
+          <div class="d-flex">
+            <label for="first-name">First name</label>
+            <input type="text" name="contact[first_name]" />
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="last-name">
+            <label for="last-name">Last name</label>
+            <input type="text" name="contact[last_name]" />
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="phone">
+            <label for="phone">Phone</label>
+            <input type="tel" name="contact[phone]"/>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="email">
+            <label for="email">Email</label>
+            <input type="email" name="contact[email]" />
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="message">
+            <label for="message">Message</label>
+            <textarea name="contact[body]"></textarea>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="submit">
+            <input type="submit" value="Submit" />
+          </div>
+        </div>
+      </div>
+    {% endform %}
+  </div>
+</div>
 {% schema %}
 {
   "name": "Template Contact",

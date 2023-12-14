@@ -9,9 +9,9 @@
                 <nav>
                     <ul class="list-unstyled d-flex gap-4 m-0">
                         {% for link in linklists.main-menu-1.links %}
-                        <li>
-                            <a class="text-decoration-none {% if link.active -%} {% else  %}text-secondary{% endif %} fw-semibold" href="{{ link.url }}">{{ link.title }}</a>
-                        </li>
+                            <li>
+                                <a class="text-decoration-none {% if link.active -%} {% else  %}text-secondary{% endif %} fw-semibold" href="{{ link.url }}">{{ link.title }}</a>
+                            </li>
                         {% endfor %}
                     </ul>
                     

@@ -12,14 +12,17 @@
                 </div>
                 <div>
                     {% form 'product', product %}
-                        <input type="hidden" value="{{ product.selected_or_first_available_variant.id }}">
-                        <select name="id">
-                            {% for variant in product.variants %}
-                                <option value="{{ variant.id }}">
-                                    {{ variant.title }}
-                                </option>
-                            {% endfor %}
-                        </select>
+                        <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+                        {%- if product.variants.size > 1 -%}
+                            <select class="me-3">
+                                {% for variant in product.variants %}
+                                    <option value="{{ variant.id }}">
+                                        {{ variant.title }}
+                                    </option>
+                                {% endfor %}
+                            </select>
+                        {%- endif -%}
+                       
                         <button type="submit" class="btn btn-primary">Add to cart</button>
                     {% endform %}
                 </div>

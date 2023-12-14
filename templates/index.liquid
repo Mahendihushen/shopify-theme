@@ -3,19 +3,7 @@
         <h1>{{ collections['frontpage'].title }}</h1>
         <div class="row">
             {% for product in collections['frontpage'].products %}
-                <div class="col-md-4 mt-5">
-                    <div class="card shadow border-0 text-start h-100">
-                        <a href="{{- product.url -}}"><img src="{{ product.featured_image | image_url: width: 500 }}" class="img-fluid" alt="{{- product.featured_image.alt -}}" width="" height="" loading="lazy"> </a>
-                        <div class="card-body">
-                            <h4 class="card-title">{{- product.title -}}</h4>
-                            {% comment %} <div>{{- product.content -}}</div> {% endcomment %}
-                            <span class="fw-bold">{{- product.price | money -}}</span>
-                        </div>
-                        <div class="card-footer bg-white p-3">
-                            <a href="{{- product.url -}}" class="btn btn-primary">Read More</a>
-                        </div>
-                    </div>
-                </div>
+                {% render 'product-item', product: product %}
             {% endfor %}
         </div>
     </div>
