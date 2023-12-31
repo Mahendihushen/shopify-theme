@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "sections": {
     "template-collection": {
       "type": "template-collection",
@@ -10,3 +11,17 @@
     "template-collection"
   ]
 }
+=======
+    "sections": {
+      "template-collection": {
+        "type": "template-collection",
+        "settings": {
+        }
+      }
+    },
+    "order": [
+      "template-collection"
+    ]
+}
+  
+>>>>>>> staging
