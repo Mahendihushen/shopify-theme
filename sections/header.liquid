@@ -9,8 +9,26 @@
                 <nav>
                     <ul class="list-unstyled d-flex gap-4 m-0">
                         {% for link in linklists.main-menu-1.links %}
-                            <li>
+                            <li class="position-relative">
                                 <a class="text-decoration-none {% if link.active -%} {% else  %}text-secondary{% endif %} fw-semibold" href="{{ link.url }}">{{ link.title }}</a>
+                                {%- if link.links != blank -%}
+                                    <ul class="dropdown-menu d-block position-absolute bg-white px-3">
+                                        {%- for child_link in link.links -%}
+                                            <li>
+                                                <a class="text-decoration-none {% if child_link.active -%} {% else  %}text-secondary{% endif %} fw-semibold" href="{{ child_link.url }}">{{ child_link.title }}</a>
+                                                 {%- if child_link.links != blank -%}
+                                                    <ul>
+                                                        {%- for sub_child in child_link.links -%}
+                                                            <li>
+                                                            <a class="text-decoration-none {% if sub_child.active -%} {% else  %}text-secondary{% endif %} fw-semibold" href="{{ sub_child.url }}">{{ sub_child.title }}</a>
+                                                            </li>
+                                                        {%- endfor -%}
+                                                    </ul>
+                                                 {%- endif -%}  
+                                            </li>
+                                        {%- endfor -%}
+                                    </ul>
+                                {%- endif -%}
                             </li>
                         {% endfor %}
                     </ul>

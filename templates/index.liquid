@@ -1,4 +1,4 @@
-<section class="py-5">
+{% comment %} <section class="py-5">
     <div class="container">
         <h1>{{ collections['frontpage'].title }}</h1>
         <div class="row">
@@ -7,7 +7,20 @@
             {% endfor %}
         </div>
     </div>
-</section>
+</section> {% endcomment %}
 
 
-
+<div class="py-5 bg-primary text-white text-center">
+  <div class="container">
+    <h1>{{ collections['frontpage'].title }}</h1>
+  </div>
+</div>
+<div class="py-5">
+    <div class="container">
+        <div class="row">
+            {% for product in collections['frontpage'].products %}
+                {% render 'product-item', product: product %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
